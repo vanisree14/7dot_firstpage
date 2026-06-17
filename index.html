@@ -1,0 +1,373 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Roverland Voyage — Into the Wow | Premium Self-Drive Road Trips</title><meta name="description" content="Premium, self-driven road trips to Iceland, New Zealand and Scandinavia. Crafted routes, cinematic surprises, unforgettable moments."><link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="site.css"></head><body><nav class="nav"><a href="index.html" aria-label="Roverland Voyage home"><img class="nav-logo light-only" src="../assets/logos/rv-logo-horizontal-white-notag.png" alt="Roverland Voyage"><img class="nav-logo dark-only" src="../assets/logos/rv-logo-horizontal-gradient-notag.png" alt="Roverland Voyage"></a><button class="nav-toggle" aria-label="Menu"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg></button><div class="nav-links"><a class="nav-link" href="iceland.html">Iceland</a><a class="nav-link" href="new-zealand.html">New Zealand</a><a class="nav-link" href="scandinavia.html">Scandinavia</a><a class="nav-link" href="about.html">About</a><a class="nav-link" href="gallery.html">Gallery</a><a class="nav-link" href="contact.html">Contact</a><a class="btn btn-primary" href="contact.html">Plan your voyage</a></div></nav>
+<header class="hero">
+  <div class="hero-media hero-reel"><img class="active" src="https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=1900&q=80&auto=format&fit=crop" alt="Iceland" ><img class="" src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=1900&q=80&auto=format&fit=crop" alt="New Zealand" loading="lazy"><img class="" src="https://images.unsplash.com/photo-1483347756197-71ef80e95f73?w=1900&q=80&auto=format&fit=crop" alt="Scandinavia" loading="lazy"></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-inner">
+    <span class="eyebrow on-dark">Premium Self-Drive Road Trips</span>
+    <h1 class="display">Every road has a<br><span class="gradient-word">wow</span> waiting</h1>
+    <p class="hero-lead">We don't sell travel. We deliver stories in motion — crafted routes, cinematic surprises, and unforgettable moments across the world's most beautiful drives.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary btn-lg" href="iceland.html">Explore our voyages <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a class="btn btn-on-dark btn-lg" href="about.html">Our story</a>
+    </div>
+    <div class="reel-dots"><button class="active" aria-label="Iceland"></button><button aria-label="New Zealand"></button><button aria-label="Scandinavia"></button></div>
+  </div>
+</header>
+
+<!-- ================= CHOOSE YOUR VOYAGE ================= -->
+<section id="voyages-showcase" aria-label="Choose your voyage">
+<style>
+#voyages-showcase { position: relative; overflow: hidden; padding: clamp(56px,9vh,110px) 0; background: radial-gradient(120% 100% at 78% 30%, #ffffff 0%, #eef5f9 46%, #e3eef5 78%, #ffffff 100%); }
+@property --vsSweep { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+#voyages-showcase .vs-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+#voyages-showcase .vs-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(42px) saturate(1.12); transform: scale(1.18); opacity: 0.22; transition: opacity var(--dur-slow) var(--ease-glide); }
+#voyages-showcase .vs-bg::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 100% at 78% 30%, rgba(255,255,255,0.84) 0%, rgba(238,245,249,0.9) 52%, #ffffff 100%); }
+#voyages-showcase .vs-wrap { position: relative; z-index: 1; max-width: var(--container-wide); margin: 0 auto; padding: 0 var(--gutter); }
+#voyages-showcase .vs-head { margin-bottom: clamp(28px,4vh,44px); }
+#voyages-showcase .vs-grid { display: grid; grid-template-columns: auto minmax(0,1fr) clamp(320px,38vw,520px); gap: clamp(24px,4vw,64px); align-items: center; }
+
+/* stepper */
+#voyages-showcase .vs-steps { display: flex; flex-direction: column; gap: 0; position: relative; }
+#voyages-showcase .vs-step { display: flex; align-items: center; gap: 16px; background: none; border: none; cursor: pointer; padding: 14px 0; text-align: left; position: relative; }
+#voyages-showcase .vs-node { position: relative; width: 52px; height: 52px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+#voyages-showcase .vs-node .vs-dot { position: absolute; inset: 7px; border-radius: 50%; background: var(--rv-clarity-white); border: 2px solid var(--border-default); display: flex; align-items: center; justify-content: center; font: 700 0.85rem/1 var(--font-body); color: var(--text-muted); transition: all var(--dur-base) var(--ease-glide); z-index: 2; }
+#voyages-showcase .vs-ring { position: absolute; inset: 0; transform: rotate(-90deg); opacity: 0; transition: opacity var(--dur-base); }
+#voyages-showcase .vs-ring circle { fill: none; stroke-width: 3; }
+#voyages-showcase .vs-ring .trk { stroke: var(--rv-ink-200); }
+#voyages-showcase .vs-ring .bar { stroke: url(#vsGrad); stroke-linecap: round; stroke-dasharray: 144.5; stroke-dashoffset: 144.5; }
+#voyages-showcase .vs-line { position: absolute; left: 25px; top: 52px; bottom: 52px; width: 2px; background: var(--rv-ink-200); z-index: 0; }
+#voyages-showcase .vs-label { display: flex; flex-direction: column; gap: 2px; }
+#voyages-showcase .vs-label .n { font: var(--type-overline); letter-spacing: var(--tracking-overline); text-transform: uppercase; color: var(--text-subtle); transition: color var(--dur-base); }
+#voyages-showcase .vs-label .t { font: var(--type-h3); text-transform: uppercase; color: var(--text-muted); transition: color var(--dur-base); }
+#voyages-showcase .vs-step.active .vs-dot { background: var(--rv-gradient-primary); border-color: transparent; color: #fff; box-shadow: var(--shadow-blue); }
+#voyages-showcase .vs-step.active .vs-ring { opacity: 1; }
+#voyages-showcase .vs-step.active .vs-label .t { color: var(--text-strong); }
+#voyages-showcase .vs-step.active .vs-label .n { color: var(--text-brand); }
+#voyages-showcase .vs-step.done .vs-dot { background: var(--rv-teal-50); border-color: var(--rv-teal-300); color: var(--rv-teal-700); }
+
+/* text panel */
+#voyages-showcase .vs-panel { min-height: 320px; }
+#voyages-showcase .vs-pill { display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px; border-radius: var(--radius-pill); background: var(--rv-blue-50); color: var(--text-brand); font: var(--type-caption); text-transform: uppercase; letter-spacing: 0.05em; }
+#voyages-showcase .vs-title { font: var(--type-display-2); letter-spacing: var(--tracking-display); text-transform: uppercase; color: var(--text-strong); margin: 18px 0 0; max-width: 16ch; }
+#voyages-showcase .vs-body { font: var(--type-lead); color: var(--text-body); margin: 18px 0 30px; max-width: 50ch; }
+#voyages-showcase .vs-anim { animation: vsTextIn var(--dur-slow) var(--ease-out) both; }
+@keyframes vsTextIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+/* porthole */
+#voyages-showcase .vs-porthole { position: relative; width: 100%; aspect-ratio: 1; max-width: 520px; margin-inline: auto; border-radius: 50%; }
+#voyages-showcase .vs-disc { position: absolute; inset: 0; border-radius: 50%; overflow: hidden; }
+#voyages-showcase .vs-disc img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+#voyages-showcase .vs-disc img.incoming { --vsSweep: 0deg; -webkit-mask: conic-gradient(from -90deg, #000 var(--vsSweep), transparent 0deg); mask: conic-gradient(from -90deg, #000 var(--vsSweep), transparent 0deg); }
+#voyages-showcase .vs-disc img.reveal-in { animation: vsClock 1.05s var(--ease-glide) forwards; }
+@keyframes vsClock { from { --vsSweep: 0deg; } to { --vsSweep: 360deg; } }
+#voyages-showcase .vs-disc.swinging { animation: vsSwing 1.05s var(--ease-glide); }
+@keyframes vsSwing { 0% { transform: rotate(-4.5deg) scale(1.04); } 55% { transform: rotate(1.6deg) scale(1.01); } 100% { transform: rotate(0) scale(1); } }
+#voyages-showcase .vs-mist { position: absolute; inset: 0; border-radius: 50%; pointer-events: none; background: radial-gradient(circle at 50% 50%, rgba(238,245,249,0) 56%, rgba(238,245,249,0.55) 78%, #eef5f9 100%); box-shadow: inset 0 0 60px 20px rgba(238,245,249,0.6); }
+#voyages-showcase .vs-porthole .vs-ribbon { position: absolute; top: 30px; left: -8px; z-index: 4; background: var(--rv-ink-900); color: #fff; font: var(--type-caption); text-transform: uppercase; letter-spacing: 0.08em; padding: 8px 18px; border-radius: 4px; box-shadow: var(--shadow-md); opacity: 0; transform: translateX(-12px); transition: all var(--dur-base) var(--ease-glide); }
+#voyages-showcase .vs-porthole.coming .vs-ribbon { opacity: 1; transform: none; }
+#voyages-showcase .vs-porthole.coming .vs-disc { filter: saturate(0.65) brightness(0.92); }
+#voyages-showcase .vs-glow { position: absolute; inset: -8%; border-radius: 50%; z-index: -1; background: var(--rv-gradient-aurora); filter: blur(60px); opacity: 0.18; }
+
+@media (max-width: 900px) {
+  #voyages-showcase .vs-grid { grid-template-columns: 1fr; gap: 28px; }
+  #voyages-showcase .vs-steps { flex-direction: row; justify-content: center; gap: 8px; order: -1; }
+  #voyages-showcase .vs-step { flex-direction: column; gap: 8px; padding: 6px; flex: 1; max-width: 120px; }
+  #voyages-showcase .vs-line { display: none; }
+  #voyages-showcase .vs-label { align-items: center; text-align: center; }
+  #voyages-showcase .vs-label .t { font: 700 0.78rem/1.1 var(--font-body); text-transform: uppercase; }
+  #voyages-showcase .vs-panel { min-height: 0; text-align: center; }
+  #voyages-showcase .vs-title { margin-inline: auto; }
+  #voyages-showcase .vs-body { margin-inline: auto; }
+  #voyages-showcase .vs-porthole { max-width: 340px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #voyages-showcase .vs-disc img.reveal-in { animation: none; -webkit-mask: none; mask: none; }
+  #voyages-showcase .vs-disc.swinging { animation: none; }
+  #voyages-showcase .vs-anim { animation: none; }
+  #voyages-showcase .vs-ring .bar { display: none; }
+}
+</style>
+<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="vsGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#087BB9"></stop><stop offset="1" stop-color="#00A383"></stop></linearGradient></defs></svg>
+<div class="vs-bg" aria-hidden="true"><img id="vsBg" src="../assets/site/iceland.jpg" alt=""></div>
+<div class="vs-wrap">
+  <div class="vs-head section-head">
+    <span class="eyebrow">Choose Your Voyage</span>
+    <h2 class="h1">Three roads into the wow</h2>
+  </div>
+  <div class="vs-grid">
+    <div class="vs-steps" id="vsSteps">
+      <div class="vs-line"></div>
+      <button class="vs-step active" data-i="0" type="button">
+        <span class="vs-node"><svg class="vs-ring" viewBox="0 0 52 52"><circle class="trk" cx="26" cy="26" r="23"></circle><circle class="bar" cx="26" cy="26" r="23"></circle></svg><span class="vs-dot">01</span></span>
+        <span class="vs-label"><span class="n">01</span><span class="t">Iceland</span></span>
+      </button>
+      <button class="vs-step" data-i="1" type="button">
+        <span class="vs-node"><svg class="vs-ring" viewBox="0 0 52 52"><circle class="trk" cx="26" cy="26" r="23"></circle><circle class="bar" cx="26" cy="26" r="23"></circle></svg><span class="vs-dot">02</span></span>
+        <span class="vs-label"><span class="n">02</span><span class="t">New Zealand</span></span>
+      </button>
+      <button class="vs-step" data-i="2" type="button">
+        <span class="vs-node"><svg class="vs-ring" viewBox="0 0 52 52"><circle class="trk" cx="26" cy="26" r="23"></circle><circle class="bar" cx="26" cy="26" r="23"></circle></svg><span class="vs-dot">03</span></span>
+        <span class="vs-label"><span class="n">03</span><span class="t">Scandinavia</span></span>
+      </button>
+    </div>
+
+    <div class="vs-panel">
+      <span class="vs-pill" id="vsPill">Iceland · Nov 1–9, 2026</span>
+      <h3 class="vs-title" id="vsTitle">Land of Ice &amp; Fire</h3>
+      <p class="vs-body" id="vsBody">Command icy wilderness and fiery volcanoes behind the wheel of a Land Rover Defender — black sand beaches, the Golden Circle, and the Northern Lights overhead.</p>
+      <a class="btn btn-primary btn-lg" id="vsCta" href="iceland.html">Explore Iceland <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+
+    <div class="vs-porthole" id="vsPorthole">
+      <div class="vs-glow"></div>
+      <span class="vs-ribbon">Coming Soon</span>
+      <div class="vs-disc" id="vsDisc">
+        <img id="vsImgBase" src="../assets/site/iceland.jpg" alt="Iceland">
+      </div>
+      <div class="vs-mist"></div>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var DATA = [
+    { pill: "Iceland · Nov 1–9, 2026", title: "Land of Ice &amp; Fire", body: "Command icy wilderness and fiery volcanoes behind the wheel of a Land Rover Defender — black sand beaches, the Golden Circle, and the Northern Lights overhead.", cta: "Explore Iceland", href: "iceland.html", img: "../assets/site/iceland.jpg", soft: false, coming: false },
+    { pill: "New Zealand · December 2026", title: "Ring In 2027 on the Edge of the World", body: "Drive from glacier to fjord across the South Island's untamed beauty, and welcome the new year under vast southern skies.", cta: "Explore New Zealand", href: "new-zealand.html", img: "../assets/site/newzealand.jpg", soft: false, coming: false },
+    { pill: "Scandinavia · Coming Soon", title: "The North, Unwritten", body: "Fjords, midnight light, and roads carved through Norway, Sweden and beyond. The next Roverland chapter is taking shape.", cta: "Notify Me", href: "scandinavia.html", img: "../assets/site/scandinavia.jpg", soft: true, coming: true },
+  ];
+  var sec = document.getElementById('voyages-showcase');
+  var steps = [].slice.call(sec.querySelectorAll('.vs-step'));
+  var pill = document.getElementById('vsPill'), title = document.getElementById('vsTitle'),
+      body = document.getElementById('vsBody'), cta = document.getElementById('vsCta'),
+      panel = sec.querySelector('.vs-panel'), porthole = document.getElementById('vsPorthole'),
+      disc = document.getElementById('vsDisc'), bg = document.getElementById('vsBg');
+  var DUR = 6000, active = 0, timer = null, paused = false;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function restartRing() {
+    var bar = steps[active].querySelector('.vs-ring .bar');
+    if (!bar) return;
+    bar.style.transition = 'none';
+    bar.style.strokeDashoffset = '144.5';
+    // force reflow then animate
+    void bar.getBoundingClientRect();
+    if (!reduce && !paused) {
+      bar.style.transition = 'stroke-dashoffset ' + DUR + 'ms linear';
+      bar.style.strokeDashoffset = '0';
+    }
+  }
+
+  function setActive(i, initial) {
+    active = i;
+    var d = DATA[i];
+    steps.forEach(function (s, j) {
+      s.classList.toggle('active', j === i);
+      s.classList.toggle('done', j < i);
+    });
+    // text
+    if (!initial) {
+      panel.querySelectorAll('.vs-anim').forEach(function (el) { el.classList.remove('vs-anim'); });
+    }
+    pill.innerHTML = d.pill; title.innerHTML = d.title; body.innerHTML = d.body;
+    cta.innerHTML = d.cta + ' <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+    cta.setAttribute('href', d.href);
+    cta.className = 'btn btn-lg ' + (d.soft ? 'btn-secondary' : 'btn-primary');
+    if (!initial) {
+      void pill.getBoundingClientRect();
+      pill.classList.add('vs-anim'); title.classList.add('vs-anim'); body.classList.add('vs-anim'); cta.classList.add('vs-anim');
+    }
+    porthole.classList.toggle('coming', !!d.coming);
+    // blurred backdrop swap
+    if (bg) bg.src = d.img;
+    // image clock wipe + porthole swing
+    var incoming = document.createElement('img');
+    incoming.src = d.img; incoming.alt = d.title.replace(/&amp;/g, '&'); incoming.className = 'incoming';
+    disc.appendChild(incoming);
+    void incoming.getBoundingClientRect();
+    incoming.classList.add('reveal-in');
+    if (!reduce) { disc.classList.remove('swinging'); void disc.getBoundingClientRect(); disc.classList.add('swinging'); }
+    var cleanup = function () {
+      // promote incoming to base, drop the rest
+      [].slice.call(disc.querySelectorAll('img')).forEach(function (im) { if (im !== incoming) im.remove(); });
+      incoming.className = ''; incoming.id = 'vsImgBase';
+    };
+    if (reduce) cleanup(); else { incoming.addEventListener('animationend', cleanup, { once: true }); setTimeout(cleanup, 1200); }
+    restartRing();
+  }
+
+  function next() { setActive((active + 1) % DATA.length); }
+  function start() { stop(); if (!paused) timer = setInterval(next, DUR); restartRing(); }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+  steps.forEach(function (s) {
+    s.addEventListener('click', function () { setActive(+s.getAttribute('data-i')); start(); });
+  });
+  sec.addEventListener('mouseenter', function () { paused = true; stop(); var bar = steps[active].querySelector('.vs-ring .bar'); if (bar) { var cs = getComputedStyle(bar).strokeDashoffset; bar.style.transition = 'none'; bar.style.strokeDashoffset = cs; } });
+  sec.addEventListener('mouseleave', function () { paused = false; start(); });
+
+  // start when scrolled into view
+  var started = false;
+  var io = new IntersectionObserver(function (en) {
+    en.forEach(function (e) { if (e.isIntersecting && !started) { started = true; setActive(0, true); start(); } });
+  }, { threshold: 0.25 });
+  io.observe(sec);
+})();
+</script>
+</section>
+
+
+<section class="section bg-white">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow">What is Roverland Voyage</span>
+      <h2 class="h1 mt-s">We choreograph emotions, not just trips</h2>
+    </div>
+    <div class="reveal">
+      <p class="lead">Roverland Voyage crafts premium, surprise-filled self-driven road trips that transform the ordinary into the unforgettable. Every route is layered with unexpected beauty, every detour hides a surprise, and every stop is designed to move more than just your wheels — it moves you. We call it the <strong>State of Wow</strong>, and we design every mile to take you there.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-page">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Our Voyages</span>
+      <h2 class="h1">Three roads into the wow</h2>
+      <p class="lead">Hand-crafted self-drive journeys through the world's most cinematic landscapes.</p>
+    </div>
+    <div class="grid grid-3">
+  <a class="voyage-card reveal" href="iceland.html">
+    <span class="vc-status"><span class="badge badge-solid badge-dot">Now booking</span></span>
+    <img class="vc-img" src="https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=900&q=80&auto=format&fit=crop" alt="Iceland" loading="lazy">
+    <div class="vc-scrim"></div>
+    <div class="vc-body">
+      <div class="vc-loc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Iceland</div>
+      <div class="vc-title">Land of Fire & Ice</div>
+      <div class="vc-meta"><span>9 days · Oct 25 – Nov 02, 2026</span><span>Land Rover Defender</span></div>
+    </div>
+  </a>
+  <a class="voyage-card reveal" href="new-zealand.html">
+    <span class="vc-status"><span class="badge badge-gradient badge-dot">Ring in 2027</span></span>
+    <img class="vc-img" src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=900&q=80&auto=format&fit=crop" alt="New Zealand" loading="lazy">
+    <div class="vc-scrim"></div>
+    <div class="vc-body">
+      <div class="vc-loc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> New Zealand</div>
+      <div class="vc-title">South Island Summer</div>
+      <div class="vc-meta"><span>11 days · Dec 22 – Jan 02</span><span>New Year 2027</span></div>
+    </div>
+  </a>
+  <a class="voyage-card reveal" href="scandinavia.html">
+    <span class="vc-status"><span class="badge badge-warning badge-dot">Coming soon</span></span>
+    <img class="vc-img" src="https://images.unsplash.com/photo-1483347756197-71ef80e95f73?w=900&q=80&auto=format&fit=crop" alt="Scandinavia" loading="lazy">
+    <div class="vc-scrim"></div>
+    <div class="vc-body">
+      <div class="vc-loc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Scandinavia</div>
+      <div class="vc-title">Fjords & Aurora</div>
+      <div class="vc-meta"><span>Coming soon</span><span>In the works</span></div>
+    </div>
+  </a></div>
+  </div>
+</section>
+
+<section class="section bg-white">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Why Self-Drive</span>
+      <h2 class="h1">Freedom without friction</h2>
+      <p class="lead">Five things we believe about the perfect road trip.</p>
+    </div>
+    <div class="grid grid-3"><div class="value-card reveal"><span class="vc-num">01</span><h3 class="h3">Wonder First</h3><p class="vc-desc">Every journey begins with the pursuit of awe — we design each route to move hearts and spark that unforgettable wow.</p></div><div class="value-card reveal"><span class="vc-num">02</span><h3 class="h3">Curated Freedom</h3><p class="vc-desc">Freedom without friction. You drive; we handle the maps, the stays, the surprises and the small print.</p></div><div class="value-card reveal"><span class="vc-num">03</span><h3 class="h3">Surprise & Delight</h3><p class="vc-desc">Thoughtful detours and secret stops are woven into every itinerary — the magic lives in the unexpected.</p></div><div class="value-card reveal"><span class="vc-num">04</span><h3 class="h3">Soulful Connections</h3><p class="vc-desc">More than destinations, we seek stories — warm hosts, local tables, and moments that stay with you.</p></div><div class="value-card reveal"><span class="vc-num">05</span><h3 class="h3">Purposeful Travel</h3><p class="vc-desc">We tread lightly — low-impact stays, community-first stops, and routes that respect the wild they cross.</p></div></div>
+  </div>
+</section>
+
+<!-- ================= AS EXPERIENCED BY — Odyssey of Two (fanned deck) ================= -->
+<section class="section bg-night" id="odyssey">
+  <div class="od-track">
+    <div class="od-stage">
+      <div class="od-head">
+        <span class="eyebrow">As Experienced By</span>
+        <h2 class="h1">Odyssey of Two</h2>
+        <p class="lead">Gowtham &amp; Rebecca drove our Iceland voyage and filmed every wow along the way — glaciers, black sand, and waterfalls frozen mid-fall.</p>
+        <div class="od-chat">
+          <div class="od-bubble"><span class="od-q">Which shot says Iceland best?</span><img class="od-q-av" src="../assets/site/odyssey-avatar.jpg" alt="Odyssey of Two"></div>
+          <div class="od-bubble"><span class="od-a-dot"><svg viewBox="0 0 24 24"><path d="M9.94 14.06 8 20l-1.94-5.94L0 12l6.06-2.06L8 4l1.94 5.94L16 12z"/><path d="M19 4v4"/><path d="M21 6h-4"/></svg></span><span class="od-a">Honestly? Every single one.</span></div>
+        </div>
+      </div>
+      <div class="od-deck"><div class="od-fan" id="odFan"><div class="od-card" data-i="0" style="transform:rotate(-30deg)"><img src="../assets/site/odyssey-4.jpg" alt="Odyssey of Two in Iceland" loading="lazy"><span class="od-rec"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Recommended</span></div><div class="od-card" data-i="1" style="transform:rotate(-15deg)"><img src="../assets/site/odyssey-2.jpg" alt="Odyssey of Two in Iceland" loading="lazy"><span class="od-rec"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Recommended</span></div><div class="od-card" data-i="2" style="transform:rotate(0deg)"><img src="../assets/site/odyssey-5.jpg" alt="Odyssey of Two in Iceland" loading="lazy"><span class="od-rec"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Recommended</span></div><div class="od-card" data-i="3" style="transform:rotate(15deg)"><img src="../assets/site/odyssey-3.jpg" alt="Odyssey of Two in Iceland" loading="lazy"><span class="od-rec"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Recommended</span></div><div class="od-card" data-i="4" style="transform:rotate(30deg)"><img src="../assets/site/odyssey-6.jpg" alt="Odyssey of Two in Iceland" loading="lazy"><span class="od-rec"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Recommended</span></div></div></div>
+    </div>
+  </div>
+<script>
+(function () {
+  var sec = document.getElementById('odyssey');
+  var track = sec.querySelector('.od-track');
+  var fan = document.getElementById('odFan');
+  var cards = [].slice.call(sec.querySelectorAll('.od-card'));
+  var ANG = [-30,-15,0,15,30];
+  var N = cards.length;
+  var mobile = window.matchMedia('(max-width: 880px)');
+  function update() {
+    if (mobile.matches) { fan.style.transform = 'none'; paint(Math.floor(N/2)); return; }
+    var rT = track.getBoundingClientRect();
+    var span = rT.height - window.innerHeight;
+    var p = span > 0 ? Math.min(1, Math.max(0, -rT.top / span)) : 0;
+    var spin = (0.5 - p) * (ANG[N-1] - ANG[0]);
+    fan.style.transform = 'rotate(' + spin.toFixed(2) + 'deg)';
+    var best = 0, bd = 1e9;
+    for (var i=0;i<N;i++){ var v=Math.abs(ANG[i]+spin); if(v<bd){bd=v;best=i;} }
+    paint(best);
+  }
+  function paint(front) {
+    cards.forEach(function (c, i) {
+      var f = i === front;
+      c.classList.toggle('is-front', f);
+      c.classList.toggle('dim', !f);
+      c.style.zIndex = f ? 50 : 20 - Math.abs(i - front);
+    });
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+</section>
+
+<section class="section bg-page">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Traveler Stories</span>
+      <h2 class="h1">Wows, in their words</h2>
+      <p class="lead">From the explorers who drove our first Iceland voyage.</p>
+    </div>
+    <div class="grid grid-3">
+  <div class="quote-card reveal">
+    <div class="q-mark">&ldquo;</div>
+    <p class="q-text">The surprises got us. A hot spring we never saw coming, a table set on black sand at sunset. We just kept saying wow.</p>
+    <div class="q-by"><div class="avatar-ring avatar" style="padding:2.5px;background:var(--rv-gradient-aurora)"><img class="avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80&auto=format&fit=crop" alt="Ananya & Karthik"></div>
+      <div><div class="q-name">Ananya & Karthik</div><div class="q-role">Iceland · March 2025</div></div></div>
+  </div>
+  <div class="quote-card reveal">
+    <div class="q-mark">&ldquo;</div>
+    <p class="q-text">Everything was handled. We turned the key and drove into the most beautiful eight days of our lives.</p>
+    <div class="q-by"><div class="avatar-ring avatar" style="padding:2.5px;background:var(--rv-gradient-aurora)"><img class="avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80&auto=format&fit=crop" alt="Rohan Mehta"></div>
+      <div><div class="q-name">Rohan Mehta</div><div class="q-role">Iceland · March 2025</div></div></div>
+  </div>
+  <div class="quote-card reveal">
+    <div class="q-mark">&ldquo;</div>
+    <p class="q-text">I have never felt so free and so looked after at the same time. The route alone was a masterpiece.</p>
+    <div class="q-by"><div class="avatar-ring avatar" style="padding:2.5px;background:var(--rv-gradient-aurora)"><img class="avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80&auto=format&fit=crop" alt="Priya Nair"></div>
+      <div><div class="q-name">Priya Nair</div><div class="q-role">Iceland · March 2025</div></div></div>
+  </div></div>
+  </div>
+</section>
+
+<section class="section-sm bg-white">
+  <div class="container">
+    <div class="section-head center" style="margin-bottom:24px">
+      <a class="eyebrow" href="https://www.instagram.com/roverlandvoyage/" target="_blank" rel="noopener" style="text-decoration:none"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg> @roverlandvoyage</a>
+      <h2 class="h2 mt-s">Follow the wow</h2>
+      <a class="btn btn-secondary mt-s" href="https://www.instagram.com/roverlandvoyage/" target="_blank" rel="noopener">Follow on Instagram <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+    <div class="ig-strip"><a href="https://www.instagram.com/roverlandvoyage/" target="_blank" rel="noopener" aria-label="Roverland Voyage on Instagram"><img src="https://images.unsplash.com/photo-1504829857797-ddff29c27927?w=400&q=80&auto=format&fit=crop" alt="" loading="lazy"></a><a href="https://www.instagram.com/roverlandvoyage/" target="_blank" rel="noopener" aria-label="Roverland Voyage on Instagram"><img src="https://images.unsplash.com/photo-1476610182048-b716b8518aae?w=400&q=80&auto=format&fit=crop" alt="" loading="lazy"></a><a href="https://www.instagram.com/roverlandvoyage/" target="_blank" rel="noopener" aria-label="Roverland Voyage on Instagram"><img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=400&q=80&auto=format&fit=crop" alt="" loading="lazy"></a><a href="https://www.instagram.com/roverlandvoyage/" target="_blank" rel="noopener" aria-label="Roverland Voyage on Instagram"><img src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?w=400&q=80&auto=format&fit=crop" alt="" loading="lazy"></a><a href="https://www.instagram.com/roverlandvoyage/" target="_blank" rel="noopener" aria-label="Roverland Voyage on Instagram"><img src="https://images.unsplash.com/photo-1469521669194-babb45599def?w=400&q=80&auto=format&fit=crop" alt="" loading="lazy"></a><a href="https://www.instagram.com/roverlandvoyage/" target="_blank" rel="noopener" aria-label="Roverland Voyage on Instagram"><img src="https://images.unsplash.com/photo-1490650404312-a2175773bbf5?w=400&q=80&auto=format&fit=crop" alt="" loading="lazy"></a></div>
+  </div>
+</section>
+<section class="footer-cta"><div class="container container-narrow"><span class="eyebrow on-dark">Into the Wow</span><h2 class="h1">Your next story starts on the road</h2><p>Tell us the feeling you're chasing. We'll craft the route, hide the surprises, and hand you the keys.</p><a class="btn btn-accent btn-lg" href="contact.html">Start planning <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></section><footer class="footer"><div class="container"><div class="footer-grid"><div><img class="footer-logo" src="../assets/logos/rv-logo-horizontal-white.png" alt="Roverland Voyage"><p class="footer-blurb">Premium, self-driven road trips that turn every mile into a long-lasting memory.</p><div class="footer-social mt-s"><a href="https://www.instagram.com/roverlandvoyage/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a><a href="#" aria-label="YouTube"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z"/><polygon points="10 15 15 12 10 9"/></svg></a></div></div><div class="footer-col"><h4>Voyages</h4><ul><li><a href="iceland.html">Iceland</a></li><li><a href="new-zealand.html">New Zealand</a></li><li><a href="scandinavia.html">Scandinavia</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms & Conditions</a></li><li><a href="cancellation.html">Cancellation Policy</a></li></ul></div></div><div class="footer-bottom"><span>© 2026 Roverland Voyage™. Into the Wow.</span><span>Coimbatore, India · santhosh@7dots.space</span></div></div></footer><script src="site.js"></script></body></html>
