@@ -1,0 +1,10 @@
+<!-- @dsCard group="Spacing" viewport="700x150" name="Motion" subtitle="Gentle, gliding — like a road unfolding (hover me)" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>body{margin:0;padding:22px;background:var(--surface-card)}
+.row{display:flex;gap:14px;flex-wrap:wrap}
+.pill{font:var(--type-caption);text-transform:uppercase;letter-spacing:.04em;padding:10px 16px;border-radius:var(--radius-pill);background:var(--rv-blue-50);color:var(--text-brand);cursor:default;transition:transform var(--dur-base) var(--ease-glide),box-shadow var(--dur-base) var(--ease-glide)}
+.pill:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.note{font:var(--type-body-sm);color:var(--text-muted);margin-top:14px}</style></head>
+<body><div class="row">
+<span class="pill">fast · 140ms</span><span class="pill">base · 240ms</span><span class="pill">slow · 420ms</span><span class="pill">reveal · 700ms</span>
+</div><div class="note">Easing: --ease-glide (UI) · --ease-out (entrances). Never bouncy.</div></body></html>

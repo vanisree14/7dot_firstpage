@@ -1,0 +1,36 @@
+/* Roverland Voyage — Webfont declarations
+   Bebas Neue  → display / headlines ("Into the Wow" energy)
+   Mulish      → body, UI, captions (Regular + Bold; variable for fine control) */
+
+@font-face {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/BebasNeue-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/Mulish-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/Mulish-Bold.ttf") format("truetype");
+}
+
+/* Variable axis 200–1000 for weights between Regular and Bold */
+@font-face {
+  font-family: "Mulish Variable";
+  font-style: normal;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url("../assets/fonts/Mulish-VariableFont_wght.ttf") format("truetype");
+}

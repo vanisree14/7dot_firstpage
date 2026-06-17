@@ -1,0 +1,97 @@
+/* Roverland Voyage — Colors :: "The Wow Spectrum"
+   Inspired by the Northern Lights — blues, teals & aurora greens that map
+   the emotional arc of a journey: calm → wonder → surprise.
+   Brand book values are canonical; tints/shades below are derived for UI. */
+
+:root {
+  /* ---- Brand core (from Brand Book 2025) ---- */
+  --rv-voyage-blue: #087BB9;   /* Primary gradient color — dawn sky, direction, trust */
+  --rv-explorer-teal: #00A383; /* Secondary gradient color — hidden lagoons, adventure */
+  --rv-voyager-black: #0A1418; /* "Voyager Black" — night before the lights (warmed slightly off pure #000) */
+  --rv-clarity-white: #FFFFFF; /* "Clarity White" — the blank canvas of wonder */
+
+  /* Aurora green — the spectrum resolves toward green at its far end (logo wordmark) */
+  --rv-aurora-green: #2FB67A;
+
+  /* ---- Voyage Blue scale ---- */
+  --rv-blue-50:  #E6F2F9;
+  --rv-blue-100: #C2DFF0;
+  --rv-blue-200: #8FC4E4;
+  --rv-blue-300: #4FA3D4;
+  --rv-blue-400: #2189C6;
+  --rv-blue-500: #087BB9;  /* = Voyage Blue */
+  --rv-blue-600: #066A9F;
+  --rv-blue-700: #055480;
+  --rv-blue-800: #073F60;
+  --rv-blue-900: #08293D;
+
+  /* ---- Explorer Teal scale ---- */
+  --rv-teal-50:  #E1F6F1;
+  --rv-teal-100: #B7EADD;
+  --rv-teal-200: #79D8C2;
+  --rv-teal-300: #2DC2A2;
+  --rv-teal-400: #04AF8D;
+  --rv-teal-500: #00A383;  /* = Explorer Teal */
+  --rv-teal-600: #00876D;
+  --rv-teal-700: #036855;
+  --rv-teal-800: #064F41;
+  --rv-teal-900: #07352C;
+
+  /* ---- Neutral / ink (cool grey, tuned toward the night sky) ---- */
+  --rv-ink-900: #0A1418;  /* Voyager Black */
+  --rv-ink-800: #16242B;
+  --rv-ink-700: #243741;
+  --rv-ink-600: #3C525E;
+  --rv-ink-500: #5C727E;
+  --rv-ink-400: #8597A1;
+  --rv-ink-300: #B3C0C7;
+  --rv-ink-200: #D6DEE3;
+  --rv-ink-100: #EBEFF2;
+  --rv-ink-50:  #F5F8FA;
+
+  /* ---- Semantic status (kept within the cool spectrum where possible) ---- */
+  --rv-success: #00A383;  /* reuse Explorer Teal */
+  --rv-info:    #087BB9;  /* reuse Voyage Blue */
+  --rv-warning: #E8A317;  /* warm amber — a campfire against the cool palette */
+  --rv-danger:  #E0533D;  /* coral — sunset alert */
+
+  /* ---- The Wow Gradients (aurora) ---- */
+  --rv-gradient-primary: linear-gradient(90deg, #087BB9 0%, #00A383 100%); /* @kind color */
+  --rv-gradient-aurora:  linear-gradient(105deg, #087BB9 0%, #00A383 55%, #2FB67A 100%); /* @kind color */
+  --rv-gradient-diagonal: linear-gradient(135deg, #087BB9 0%, #00A383 100%); /* @kind color */
+  --rv-gradient-night:   linear-gradient(160deg, #08293D 0%, #064F41 60%, #07352C 100%); /* @kind color */
+  /* Soft surface wash for hero panels */
+  --rv-gradient-mist:    linear-gradient(135deg, #E6F2F9 0%, #E1F6F1 100%); /* @kind color */
+
+  /* ============ SEMANTIC ALIASES ============ */
+  /* Text */
+  --text-strong:   var(--rv-ink-900);
+  --text-body:     var(--rv-ink-700);
+  --text-muted:    var(--rv-ink-500);
+  --text-subtle:   var(--rv-ink-400);
+  --text-inverse:  var(--rv-clarity-white);
+  --text-brand:    var(--rv-blue-600);
+  --text-on-brand: var(--rv-clarity-white);
+
+  /* Surfaces */
+  --surface-page:    var(--rv-ink-50);
+  --surface-card:    var(--rv-clarity-white);
+  --surface-sunken:  var(--rv-ink-100);
+  --surface-brand:   var(--rv-blue-500);
+  --surface-night:   var(--rv-ink-900);
+  --surface-mist:    var(--rv-blue-50);
+
+  /* Lines & borders */
+  --border-subtle:  var(--rv-ink-200);
+  --border-default: var(--rv-ink-300);
+  --border-strong:  var(--rv-ink-400);
+  --border-brand:   var(--rv-teal-500);
+
+  /* Interactive */
+  --action-primary:        var(--rv-blue-500);
+  --action-primary-hover:  var(--rv-blue-600);
+  --action-primary-active: var(--rv-blue-700);
+  --action-accent:         var(--rv-teal-500);
+  --action-accent-hover:   var(--rv-teal-600);
+  --focus-ring:            var(--rv-teal-400);
+}

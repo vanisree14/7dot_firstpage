@@ -1,0 +1,53 @@
+/* Roverland Voyage — Base layer + reusable helpers.
+   Lightweight resets and a handful of brand utility classes that
+   components & cards lean on. Kept minimal — tokens do the heavy lifting. */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font: var(--type-body);
+  color: var(--text-body);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---- Display & heading helpers ---- */
+.rv-display-1 { font: var(--type-display-1); letter-spacing: var(--tracking-display); color: var(--text-strong); text-transform: uppercase; margin: 0; }
+.rv-display-2 { font: var(--type-display-2); letter-spacing: var(--tracking-display); color: var(--text-strong); text-transform: uppercase; margin: 0; }
+.rv-h1 { font: var(--type-h1); color: var(--text-strong); text-transform: uppercase; margin: 0; }
+.rv-h2 { font: var(--type-h2); color: var(--text-strong); text-transform: uppercase; margin: 0; }
+.rv-h3 { font: var(--type-h3); color: var(--text-strong); text-transform: uppercase; margin: 0; }
+
+.rv-eyebrow {
+  font: var(--type-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--text-brand);
+  display: inline-block;
+}
+
+.rv-lead { font: var(--type-lead); color: var(--text-body); margin: 0; }
+.rv-overline { font: var(--type-overline); letter-spacing: var(--tracking-overline); text-transform: uppercase; color: var(--text-muted); }
+
+/* ---- Brand gradient helpers ---- */
+.rv-gradient-text {
+  background: var(--rv-gradient-aurora);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.rv-gradient-bg { background: var(--rv-gradient-primary); color: var(--text-on-brand); }
+.rv-gradient-bg-aurora { background: var(--rv-gradient-aurora); color: var(--text-on-brand); }
+
+/* ---- Focus visibility ---- */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: none;
+  box-shadow: var(--ring-focus);
+  border-radius: var(--radius-xs);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

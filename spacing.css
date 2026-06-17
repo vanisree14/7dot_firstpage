@@ -1,0 +1,58 @@
+/* Roverland Voyage — Spacing, radii, shadows, motion, layout
+   8px base grid. Generous, open spacing echoes "the open road". */
+
+:root {
+  /* ---- Spacing scale (8px base; 2/4 for fine detail) ---- */
+  --space-0: 0;
+  --space-1: 0.25rem;  /* 4 */
+  --space-2: 0.5rem;   /* 8 */
+  --space-3: 0.75rem;  /* 12 */
+  --space-4: 1rem;     /* 16 */
+  --space-5: 1.5rem;   /* 24 */
+  --space-6: 2rem;     /* 32 */
+  --space-7: 3rem;     /* 48 */
+  --space-8: 4rem;     /* 64 */
+  --space-9: 6rem;     /* 96 */
+  --space-10: 8rem;    /* 128 */
+
+  /* ---- Radii (soft, friendly — echoes the rounded star-arrow base) ---- */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-2xl: 36px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* ---- Shadows (cool-tinted, soft — never harsh) ---- */
+  --shadow-xs: 0 1px 2px rgba(8, 41, 61, 0.06);
+  --shadow-sm: 0 2px 6px rgba(8, 41, 61, 0.08);
+  --shadow-md: 0 8px 24px rgba(8, 41, 61, 0.10);
+  --shadow-lg: 0 18px 48px rgba(8, 41, 61, 0.14);
+  --shadow-xl: 0 32px 80px rgba(8, 41, 61, 0.18);
+  /* Brand glow — for hero CTAs / active aurora elements */
+  --shadow-brand: 0 14px 36px rgba(0, 163, 131, 0.30);
+  --shadow-blue: 0 14px 36px rgba(8, 123, 185, 0.28);
+  /* Focus ring */
+  --ring-focus: 0 0 0 3px rgba(4, 175, 141, 0.45);
+
+  /* ---- Borders ---- */
+  --border-width: 1px; /* @kind spacing */
+  --border-width-thick: 2px; /* @kind spacing */
+
+  /* ---- Motion (gentle, gliding — like a road unfolding; never bouncy) ---- */
+  --ease-glide: cubic-bezier(0.22, 0.61, 0.36, 1); /* @kind other */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast: 140ms; /* @kind other */
+  --dur-base: 240ms; /* @kind other */
+  --dur-slow: 420ms; /* @kind other */
+  --dur-reveal: 700ms; /* @kind other */
+
+  /* ---- Layout ---- */
+  --container-max: 1200px; /* @kind spacing */
+  --container-wide: 1360px; /* @kind spacing */
+  --container-narrow: 760px; /* @kind spacing */
+  --gutter: clamp(1.25rem, 4vw, 3rem); /* @kind spacing */
+}
